@@ -1,0 +1,286 @@
+/*==========
+Sommaire
+
+
+1.Global
+2.Elements
+3.Header
+  4.Nav-mid-bar
+  5.Menu
+  6.Icone
+  7.Logo
+  8.Searchbar Form
+  9.Login+Register
+  10.Login
+  11.Register
+12.Footer
+  13.Left Footer
+  14.Right Footer
+  15.Social Links
+  16.Copyright
+
+
+==========*/
+
+
+
+
+
+/*Global*/
+
+* {
+  font-family: Arial;
+}
+
+.container {
+  min-height: 100vh;
+  position: relative;
+
+}
+
+.header {
+  padding-bottom: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+.body {
+  padding: 10px;
+  padding-top: 67px;
+  padding-bottom: calc(100vh - 200px);
+  background-color: #EFF0F1;
+}
+
+.footer {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+  background-color: #242729;
+}
+
+/*Elements*/
+
+body {
+  margin : 0;
+  height: 100%;
+}
+
+
+/*Header*/
+.nav-top-bar {
+  height: 3px;
+  background-color: #F48024;
+  margin: 0;
+}
+
+/*Nav-mid-bar*/
+
+.nav-mid-bar {
+  margin: 0;
+  padding: 0;
+  padding-left: 5em;
+  height: 57px;
+  background-color: #FAFAFB;
+  display: flex;
+  box-shadow: 0 0 5px 5;
+}
+
+
+/*Menu*/
+.nav-mid-bar__menu {
+  display: flex;
+  position: relative;
+  border: none;
+  height: 100%;
+  width: 47px;
+}
+
+.nav-mid-bar__menu:hover{
+  background-color: #E4E6E8;
+  cursor: pointer;
+}
+
+/*Icone*/
+.fa-bars {
+  font-size: 2em;
+  padding-top: 12px;
+  padding-left: 10px;
+}
+
+
+/*Logo*/
+
+.nav-mid-bar__img {
+  display: flex;
+  position: relative;
+  margin-top: 0;
+  margin-left: 3em;
+  margin-right: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 100%;
+}
+.nav-mid-bar__img span {
+  background-image: url('../img/logo_36.png');
+  background-repeat: no-repeat;
+  margin-top: 6px;
+  display: flex;
+  width: 115px;
+}
+
+.nav-mid-bar__img:hover {
+  background-color: #E4E6E8;
+  cursor: pointer;
+}
+
+/*Searchbar Form*/
+
+.nav-mid-bar__searchbar {
+  width: 60%;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+.nav-mid-bar__searchbar:focus-within {
+  box-shadow: 0 0 8px 0;
+}
+
+.searchbar__input {
+  width: 100%;
+  border: 3px solid #C0C0C0;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.searchbar__button {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #C0C0C0;
+  background: #C0C0C0;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Login + Register*/
+
+.nav-mid-bar__login, 
+.nav-mid-bar__register {
+  display: flex;
+  position: relative;
+  outline: none;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.nav-mid-bar__login:active {
+  box-shadow: 0 0 8px 0;
+}
+
+.nav-mid-bar__register:active {
+  box-shadow: 0 0 8px 0 #0095ff;
+}
+
+/*Login*/
+.nav-mid-bar__login {
+  margin-right: 3px;
+  background-color: #e1ecf4;
+  color: #39739d;
+}
+
+/*Register*/
+.nav-mid-bar__register {
+  margin-left: 3px;
+  background-color: #0095ff;
+  border-color: #0095ff;
+  color: #ffffff;
+}
+
+/*Footer*/
+
+.footer__logo {
+  display: flex;
+  padding: 12px;
+  margin-left: 2em;
+  margin-top: 2em;
+}
+
+.footer__logo span {
+  background-image: url('../img/favicon.ico');
+  background-repeat: no-repeat;
+  display: flex;
+  height: 50px;
+  width: 50px;
+}
+
+
+/*Left Footer*/
+.footer__about {
+  display: flex;
+  padding: 12px;
+}
+
+.footer__about h5 {
+  color: #B6BCC0;
+  font-family: Arial;
+}
+
+.footer__about li {
+  position: relative;
+  display: flex;
+  padding: 4px;
+  font-family: Arial;
+}
+
+.footer__about a {
+  color: #848d95;
+  text-decoration: none;
+}
+
+.footer__about a:hover {
+  color: #9FA6AD;
+}
+
+/*Right Footer*/
+
+.footer__right {
+  position: relative;
+  margin-top: 3em;
+  margin-left: 60%;
+}
+
+/*Social Links*/
+.footer__social {
+  display: flex;
+}
+
+.footer__social a {
+  margin: 3px;
+  margin-top: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial;
+  font-size: 10px;
+  color: #848d95;
+}
+
+/*Copyright*/
+.footer__copyright {
+  text-transform: uppercase;
+  font-family: Arial;
+  font-size: 10px;
+  color: #848d95;
+  margin-top: 10em;
+}
