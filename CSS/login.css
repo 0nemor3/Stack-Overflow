@@ -23,7 +23,7 @@
 	padding-bottom: 0;
 	margin-bottom: 0;
 
-	
+
 }
 
 .content {
@@ -52,8 +52,8 @@
 
 /*Login Buttons*/
 
-.center__button-google, 
-.center__button-facebook, 
+.center__button-google,
+.center__button-facebook,
 .center__button-github {
 	display: block;
 	width: 100%;
