@@ -11,7 +11,13 @@
     <input type="text" name="research" id="research" placeholder="Recherchez..." class="searchbar__input">
     <button type="submit" class="searchbar__button" name="submit"><i class="fas fa-search"></i></button>
   </form>
-  <button class="nav-mid-bar__login" onclick="window.location.href='login.php'">Connexion</button>
-  <button class="nav-mid-bar__register">Inscription</button>
+  <?php
+    if (!isset($SESSION['displayname'])){
+      $header_file = "header_visitor.php";
+    }else{
+      $header_file = "header_log.php";
+    }
+    require_once ($header_file);
+   ?>
 </div>
 </div>
