@@ -41,7 +41,7 @@
 						<button type="submit" class="center__login-button">Log In</button>
 					</div>
 					<p class="center__bottom">
-						Don't have an account ? <a href="">Sign In</a>
+						Don't have an account ? <a href="signup.php">Sign In</a>
 					</p>
 				</div>
 

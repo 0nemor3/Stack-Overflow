@@ -1,0 +1,50 @@
+/*Sommaire
+
+
+
+
+
+
+
+
+
+*/
+
+
+.content {
+	display: flex;
+}
+
+.content__left {
+	margin-left: 16em;
+	margin-top: 8em;
+	font-size: 16px;
+}
+
+.content__left h1 {
+	font-weight: normal;
+	padding-bottom: 6px;
+}
+
+.content__ask {
+	padding: 6px;
+}
+
+.content__ask span i{
+	color: #0095FF;
+}
+
+.content__unlock {
+	padding: 6px;
+}
+
+.content__unlock i{
+	color: #0095FF;
+	padding-left: 4px;
+}
+
+.content__start {
+	color: #767e87;
+	font-size: 14px;
+	padding: 8px;
+}

@@ -12,6 +12,7 @@
         <link rel="icon" type="image/ico" href="img/favicon.ico">
         <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/signup.css">
     </head>
 
 
@@ -26,9 +27,9 @@
 	<div class="body">
 		<div class="content">
 			<div class="content__left">
-				<h1>Join the Stack Overflow community</h1>
-				<div class="content__ask"><span></span>Get unstuck — ask a question</div>
-				<div class="content__unlock"><span></span>Unlock new privileges like voting and commenting</div>
+				<h1>Join the Stack Overflow <br>community</h1>
+				<div class="content__ask"><span><i class="far fa-question-circle"></i>  </span>Get unstuck — ask a question</div>
+				<div class="content__unlock"><span><i class="fas fa-arrows-alt-v"></i>  </span>Unlock new privileges like voting and commenting</div>
 				<p class="content__start">Get Stack Overflow now!</p>
 			</div>
 			<div class="content__right">
@@ -36,11 +37,11 @@
 				<button class="right__facebook"></button>
 				<button class="right__github"></button>
 				<div class="form">
-					<label for=""></label>
+					<label for="display_name">Display Name</label>
 					<input type="text">
-					<label for=""></label>
+					<label for="email">Email</label>
 					<input type="text">
-					<label for=""></label>
+					<label for="password">Password</label>
 					<input type="text">
 					<button></button>
 					<p></p>
