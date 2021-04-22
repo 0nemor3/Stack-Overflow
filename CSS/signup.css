@@ -1,7 +1,8 @@
 /*Sommaire
 
-
-
+1.Global
+2.Left Side
+3.Right Side
 
 
 
@@ -10,15 +11,18 @@
 
 */
 
-
+/*Global*/
 .content {
 	display: flex;
 }
 
+
+/*Left Side*/
 .content__left {
-	margin-left: 16em;
-	margin-top: 8em;
+	padding-left: 12%;
+	padding-top: 8em;
 	font-size: 16px;
+	width: 50%;
 }
 
 .content__left h1 {
@@ -36,6 +40,7 @@
 
 .content__unlock {
 	padding: 6px;
+	padding-right: 0;
 }
 
 .content__unlock i{
@@ -47,4 +52,152 @@
 	color: #767e87;
 	font-size: 14px;
 	padding: 8px;
+}
+/*Right Side*/
+.content__right {
+	width: 50%;
+	padding-right: 17em;
+	padding-left: 14em;
+}
+
+.right__google,
+.right__facebook,
+.right__github {
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 5px;
+	border-radius: 6px;
+	border: solid 1px ;
+}
+
+.right__google {
+	border-color: #d6d9dc;
+	background-color: #fff;
+	text-align: center;
+}
+
+.right__google:hover {
+	background-color: #FAFAFB;
+	cursor: pointer;
+}
+
+.right__google img {
+	height: 18px;
+	width: 18px;
+	display: inline-block;
+	margin-bottom: -5px;
+}
+
+.right__facebook {
+	background-color: #385499;
+	border-color: #385499;
+	color: #fff;
+}
+
+.right__facebook i {
+	color: #fff;
+	font-size: 18px;
+}
+
+.right__facebook:hover {
+	background-color: #314A86;
+	cursor: pointer;
+}
+
+.right__github {
+	background-color: #2f3337;
+	border-color: #2f3337;
+	color: #fff;
+}
+
+.right__github i {
+	color: #fff;
+	font-size: 18px;
+}
+
+.right__github:hover {
+	background-color: #242729;
+	cursor: pointer;
+}
+
+.form {
+	margin-left: 5px;
+	margin-top: 40px;
+	background-color: #FFFFFF;
+	border-radius: 6px;
+	border: solid 1px #d6d9dc;
+	padding: 12px;
+	padding-top: 25px;
+}
+
+.form label {
+	font-weight: bold;
+	padding-top: 12px;
+	padding-bottom: 6px;
+	display: block;
+}
+
+.form input {
+	display: block;
+	width: 100%;
+	height: 30px;
+	border: 1px solid #bbc0c4;
+	border-radius: 4px;
+	outline: none;
+	padding: 3px;
+	padding-left: 6px;
+}
+
+.form input:focus {
+	border-color: #6fbcf7;
+	box-shadow: 0 0 5px 0 #6fbcf7;
+}
+
+.form__name,
+.form__email,
+.form__password {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.form__signup-button {
+	display: block;
+	width: 90%;
+	height: 40px;
+	border: 1px solid #0095ff;
+	border-radius: 4px;
+	outline: none;
+	margin-top: 2em;
+	margin-left: 1em;
+	background-color: #0095ff;
+	color: #fff;
+}
+
+.form__signup-button:hover {
+	background-color: #0077CC;
+	cursor: pointer;
+}
+
+.right__bottom-text {
+	text-align: center;
+	display: block;
+	color: #000;
+	font-size: 12px;
+	margin-top: 3em;
+}
+
+.right__bottom-text a {
+	color: #0077cc;
+	text-decoration: none;
+}
+
+.right__bottom-text a:hover {
+	cursor: pointer;
+	color: #0095FF;
+}
+
+/*Error*/
+.form__error {
+	color: red;
 }

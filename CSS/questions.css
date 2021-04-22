@@ -1,0 +1,88 @@
+/*Sommaire
+
+
+
+
+
+1.
+2.
+3.
+
+
+*/
+
+/*Global*/
+.content {
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 0;
+}
+
+/*Top*/
+.top {
+	background-color: #FFF;
+	width: 100%;
+	padding: 12px;
+}
+
+.top__title {
+	padding: 15px;
+	display: flex;
+}
+
+.top__title h1 {
+	font-weight: 10;
+	font-size: 30px;
+}
+
+.top__title button {
+	border: 1px solid #0077CC;
+	border-radius: 3px;
+	margin-left: auto;
+	background-color: #0095ff;
+	color: #FFF;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.top__title button:hover {
+	background-color: #0077CC;
+	cursor: pointer;
+}
+
+.top__filter {
+	display: flex;
+}
+
+
+.top__numbers {
+	padding-left: 12px;
+}
+
+.top__button-new,
+.top__button-karma {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #9fa6ad;
+	background-color: #ffffff;
+}
+
+.top__button-new:hover,
+.top__button-karma:hover {
+	background-color: #FAFAFB;
+	cursor: pointer;
+}
+
+.top__button-new:active,
+.top__button-karma:active {
+	box-shadow: 0 0 5px 2px;
+}
+
+.top__button-new {
+	margin-left: auto;
+	border-radius: 6px 0 0 6px;
+}
+
+.top__button-karma {
+	border-radius: 0 6px 6px 0;
+}

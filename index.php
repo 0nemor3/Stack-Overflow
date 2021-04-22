@@ -23,7 +23,9 @@
 	<div class="container">
 	<?php require_once('header.php') ?>
 
-	<div class="body"></div>
+	<div class="body">
+        Bienvenue sur Stack Overflow !
+    </div>
 
 	<?php require_once('footer.php') ?>
 
