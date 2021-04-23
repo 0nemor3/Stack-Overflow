@@ -18,6 +18,12 @@
 	margin-top: 0;
 }
 
+.body {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	min-height: calc(100vh - 67px);
+}
+
 /*Top*/
 .top {
 	background-color: #FFF;
@@ -85,4 +91,12 @@
 
 .top__button-karma {
 	border-radius: 0 6px 6px 0;
+}
+
+/*Question*/
+.question {
+	background-color: #fff;
+	padding: 12px;
+	width: 100%;
+	border-top: 1px solid #d6d9dc;
 }
