@@ -1,8 +1,5 @@
-<?php session_start();
-	const HOST = "localhost";
-    const USER = "root";
-    const PASSWORD = "";
-    const BASE = "Stackoverflow";
+<?php session_start(); 
+		require_once('const.php');
 ?>
 
 
@@ -27,7 +24,7 @@
 			<div class="top">
 				<div class="top__title">
 					<h1>All Questions</h1>
-					<button onclick="">Ask Question</button>
+					<button onclick="window.location.href='question_ask.php'">Ask Question</button>
 				</div>
 				<div class="top__filter">
 					<p class="top__numbers">
@@ -39,8 +36,11 @@
 							$row = mysqli_fetch_row($resultlignes);
 							echo $row[0];
 							mysqli_close($link);
+							echo " question";
+							if ($row[0] > 1) {
+								echo "s";
+							}
 						 ?>
-						 question(s)
 					</p>
 					<button class="top__button-new">Sort by New</button>
 					<button class="top__button-karma">Sort by Karma</button>
@@ -49,16 +49,21 @@
 			<?php
 				//Connexion à la base de données
 				$link = mysqli_connect(HOST, USER, PASSWORD, BASE);
-				$query = "SELECT titre, question, date, auteur, reponses, karma FROM QUESTIONS;";
+				$query = "SELECT id, titre, question, date, auteur, reponses, karma FROM QUESTIONS;";
 				$resultquestion = mysqli_query($link, $query);
 
 				while ($questionline = mysqli_fetch_array($resultquestion)) {
+					$id = $questionline['id'];
 					$titre = $questionline['titre'];
 					$question = $questionline['question'];
 					$date = $questionline['date'];
 					$auteur = $questionline['auteur'];
 					$reponses = $questionline['reponses'];
 					$karma = $questionline['karma'];
+					$titre_str = substr($titre, 0, 50);
+					$titre_affiche = preg_replace("/\s+/", "", $titre_str);
+					$question_affiche = substr($question, 0, 250);
+					$question_affichee = preg_replace("/\n|\t|\r|/", "", $question_affiche);
 			?>
 			<div class="question">
 				<div class="question__top">
@@ -73,8 +78,21 @@
 						</p>
 					</div>
 					<div class="question__right">
-						<h2></h2>
-						<p></p>
+						<h2 class="question__titre">
+							<?php echo html_entity_decode($titre_affiche);
+								if (strlen($titre) > 50) {
+									echo " ...";
+								}
+						 	?>
+						 </h2>
+						<p>
+							<?php
+								echo html_entity_decode($question_affichee);
+								if (strlen($question) > 250) {
+									echo " ...";
+								}
+							 ?>
+						</p>
 					</div>
 				</div>
 				<div class="question__bottom">

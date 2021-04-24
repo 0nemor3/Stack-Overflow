@@ -24,6 +24,10 @@
 	min-height: calc(100vh - 67px);
 }
 
+.footer {
+	position: relative;
+}
+
 /*Top*/
 .top {
 	background-color: #FFF;
@@ -99,4 +103,35 @@
 	padding: 12px;
 	width: 100%;
 	border-top: 1px solid #d6d9dc;
+}
+
+.question__top {
+	display: flex;
+}
+
+
+
+.question__reponses,
+.question__karma {
+	border: 1px solid #f6f6f7;
+	text-align: center;
+	width: 5em;
+	padding: 6px;
+	color: #6a737c;
+}
+
+.question__right {
+	padding: 12px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.question__titre {
+	font-size: 14px;
+	color: #0077cc;
+}
+
+.question__titre:hover {
+	color: #46B2FF;
+	cursor: pointer;
 }

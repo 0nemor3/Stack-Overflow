@@ -1,8 +1,5 @@
 <?php session_start();
-	const HOST = "localhost";
-    const USER = "root";
-    const PASSWORD = "";
-    const BASE = "Stackoverflow";
+require_once('const.php');
 ?>
 
 
