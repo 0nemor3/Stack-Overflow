@@ -26,7 +26,7 @@ CREATE TABLE REPONSES (	id INT AUTO_INCREMENT PRIMARY KEY,
 						karma INT);
 
 CREATE TABLE KARMA (id INT AUTO_INCREMENT PRIMARY KEY,
-					auteur VARCHAR(50),
+					auteur int,
 					question INT,
 					reponse INT,
 					date DATETIME);
@@ -44,50 +44,7 @@ VALUES ("How do I undo 'git add' before commit ?",
 	 		'2021-04-16 15:17:05',
 	 		"Jean Monet",
 	 		2,
-	 		0),
-		("Insert <div> under the header on a specific category page",
-			"In my Wordpress website i made this code in header.php that write html under the header only if you are on a specific post (product) page,
-
-			<?php
-			$post = get_post();
-			    if ( $post->ID == 'postid' ){
-			        echo '<div>
-			            <p>'text'
-			            </p>
-			        </div>
-			    </div>
-			</div>';
-			}
-			?>
-
-			I would like to make the same thing in a specific category page doing something like this
-
-			<?php
-			$postcat = get_the_category();
-			if ( $postcat->ID == 'categoryid'){{
-			    echo '<div>
-			        <p>'text'
-			        </p>
-			    </div>
-			</div>
-			</div>';
-			}
-			?>
-
-			But it doesn't work, i also tried different method like
-
-			<?php if (is_category('categoryname')) : ?>
-			<div></div>
-			?php endif;?>
-
-			How can i do this?
-
-			Thanks.",
-			'2021-04-23 17:08:04',
-			"Jean Zay",
-			1,
-			0
-			);
+	 		0);
 
 
 INSERT INTO REPONSES (question, reponse, auteur, date, karma)
@@ -96,6 +53,6 @@ VALUES (1, "You can simply tap 'git reset'.", "Gustave Eiffel", '2021-04-16 15:0
 
 
 INSERT INTO KARMA (auteur, question, reponse, date)
-VALUES ("Jean Monet", NULL, 1, '2021-04-16 15:47:39'),
-		("Jean Monet", NULL, 2, '2021-04-16 15:48:03'),
-		("Gustave Eiffel", NULL, 2, '2021-04-16 15:49:00');
+VALUES (1, NULL, 1, '2021-04-16 15:47:39'),
+		(1, NULL, 2, '2021-04-16 15:48:03'),
+		(2, NULL, 2, '2021-04-16 15:49:00');

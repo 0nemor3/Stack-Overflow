@@ -135,3 +135,12 @@
 	color: #46B2FF;
 	cursor: pointer;
 }
+
+/*Bottom question*/
+.question__bottom {
+	background-color: red;
+}
+
+.bottom__align {
+	width: 70%;
+}

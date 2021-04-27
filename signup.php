@@ -65,7 +65,7 @@ require_once('const.php');
 								}else {
 									$date = date('Y-m-d H:i:s');
 									$karma = 1;
-									$profilpic = "img/default.png";
+									$profilpic = "profilpic/default.png";
 									//Connexion à la base de données
 									$link = mysqli_connect(HOST, USER, PASSWORD, BASE);
 									/*$query = "SELECT displayname FROM MEMBRES WHERE displayname = '$displayname';";

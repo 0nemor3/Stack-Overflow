@@ -32,10 +32,10 @@
         $titre = htmlentities("Insert <div> under the header on a specific category page");
         echo $titre;
         
-?>
-            <code>In my Wordpress website i made this code in header.php that write html under the header only if you are on a specific post (product) page,
 
-            <?php
+            $question = htmlentities("In my Wordpress website i made this code in header.php that write html under the header only if you are on a specific post (product) page,");
+
+            $question = addslashes("<?php
             $post = get_post();
                 if ( $post->ID == 'postid' ){
                     echo '<div>
@@ -45,8 +45,8 @@
                 </div>
             </div>';
             }
-            ?>
-
+            ?>");
+/*
             I would like to make the same thing in a specific category page doing something like this
 
             <?php
@@ -69,9 +69,9 @@
 
             How can i do this?
 
-            Thanks."</code>
-            <?php
-        echo $question;
+            Thanks."));*/
+            
+        echo stripslashes($question);
         //Connexion à la base de données
                                     $link = mysqli_connect(HOST, USER, PASSWORD, BASE);
                                     /*$query = "SELECT displayname FROM MEMBRES WHERE displayname = '$displayname';";
@@ -84,7 +84,7 @@
 
     </div>
 
-	<?php require_once('footer.php') ?>
+	<?php //require_once('footer.php') ?>
 
 
 
