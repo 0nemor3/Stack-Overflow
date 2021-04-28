@@ -12,7 +12,6 @@
     <button type="submit" class="searchbar__button" name="submit"><i class="fas fa-search"></i></button>
   </form>
   <?php
-  $SESSION['displayname'] = "Louka";
     if (!isset($SESSION['displayname'])){
       $header_file = "header_visitor.php";
     }else{

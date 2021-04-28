@@ -179,7 +179,7 @@ html {
 
 /*Login + Register*/
 
-.nav-mid-bar__login, 
+.nav-mid-bar__login,
 .nav-mid-bar__register {
   display: flex;
   position: relative;

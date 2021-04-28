@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 require_once('const.php');
 ?>
 
@@ -49,19 +49,29 @@ require_once('const.php');
 			<?php
 				//Connexion à la base de données
 			$link = mysqli_connect(HOST, USER, PASSWORD, BASE);
-			$query = "SELECT id, titre, question, date, auteur, reponses, karma FROM QUESTIONS;";
+			if ($link == false) {
+				echo '<script>document.location.replace("error.php");</script>';
+			}
+			$query = "SELECT id, titre, question, date, auteur, displayname, reponses, karma FROM QUESTIONS;";
 			$resultquestion = mysqli_query($link, $query);
 
 			while ($questionline = mysqli_fetch_array($resultquestion)) {
-				$id = $questionline['id'];
+				$id_question = $questionline['id'];
 				$titre = $questionline['titre'];
 				$question = $questionline['question'];
 				$date = $questionline['date'];
 				$auteur = $questionline['auteur'];
+				$displayname = $questionline['displayname'];
 				$reponses = $questionline['reponses'];
 				$karma = $questionline['karma'];
 				$titre_affiche = substr($titre, 0, 50);
 				$question_affiche = substr($question, 0, 250);
+
+				$query = "SELECT id, profilpic FROM MEMBRES WHERE id = $auteur";
+				$resultmembre = mysqli_query($link, $query);
+				$membreline = mysqli_fetch_array($resultmembre);
+				$id_membre = $membreline['id'];
+				$image = $membreline['profilpic'];
 				?>
 				<div class="question">
 					<div class="question__top">
@@ -77,10 +87,11 @@ require_once('const.php');
 						</div>
 						<div class="question__right">
 							<h2 class="question__titre">
-								<?php echo html_entity_decode($titre_affiche);
+								<?php echo '<a href="question.php?id=' . urlencode($id_question) .'" class="question__title-link">' . html_entity_decode($titre_affiche);
 								if (strlen($titre) > 50) {
 									echo " ...";
 								}
+								echo '</a>';
 								?>
 							</h2>
 							<p>
@@ -95,16 +106,27 @@ require_once('const.php');
 					</div>
 					<div class="question__bottom">
 						<div class="bottom__align"></div>
-						<p class="bottom__date">
+						<div class="bottom__right">
+							<?php echo '<a href="user.php?id=' . urlencode($id_membre) . '"/>'; ?>
+							<div class="bottom__image-div">
+								<?php
+								echo '<img src="' . $image . '" alt="profilpic" class="bottom__image">';
+								?>
+							</div>
+							<?php echo '</a>'; ?>
+							<p class="bottom__date">
+								<?php
+								echo $date;
+								?>
+							</p>
 							<?php
-							echo $date;
-							?>
-						</p>
-						<p class="bottom__auteur">
-							<?php
-							echo $auteur;
-							?>
-						</p>
+								echo '<a href="user.php?id=' . urlencode($id_membre) . '"/>';
+							 ?>
+							<p class="bottom__auteur">
+								<?php echo "by ". $displayname; ?>
+							</p>
+							<?php echo "</a>" ?>
+						</div>
 					</div>
 				</div>
 

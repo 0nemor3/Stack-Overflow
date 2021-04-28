@@ -136,11 +136,66 @@
 	cursor: pointer;
 }
 
+.question__title-link {
+	text-decoration: none;
+	color: #0077cc;
+}
+.question__title-link:hover {
+	color: #46B2FF;
+}
+
 /*Bottom question*/
 .question__bottom {
-	background-color: red;
+	display: flex;
 }
 
 .bottom__align {
+	position: relative;
+	display: flex;
 	width: 70%;
+	height: 5em;
+}
+
+.bottom__right {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.bottom__right a {
+	text-decoration: none;
+}
+
+.bottom__date {
+	display: inline-block;
+	color: #848d95;
+	width: 75px;
+	font-size: 12px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.bottom__auteur {
+	display: block;
+	color: #0077cc;
+	text-align: center;
+	font-size: 14px;
+	margin: 0;
+}
+
+.bottom__auteur:hover {
+	cursor: pointer;
+	color: #0095FF;
+}
+
+.bottom__image-div {
+	height: 35px;
+	width: 35px;
+	display: inline-block;
+}
+
+.bottom__image {
+	max-width: 100%;
+	height: auto;
 }
