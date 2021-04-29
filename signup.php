@@ -54,7 +54,6 @@ require_once('vendor/autoload.php');
 						$google_info = $gauth->userinfo -> get();
 						$email = $google_info->email;
 						$displayname = $google_info->name;
-						echo $displayname. " and " .$email;
 						if (isset($displayname) && isset($email)) {
 							if (empty($displayname) || empty($email)) {
 								echo "<script>window.location.href = 'error.php';</script>";
@@ -66,10 +65,19 @@ require_once('vendor/autoload.php');
 							$query = "SELECT email FROM MEMBRES WHERE email = '$email';";
 							$resultemail = mysqli_query($link, $query);
 							if (0 != mysqli_num_rows($resultemail)) {
-								echo '<p class="form__erreur">Existe déja!</p>';
+								//echo '<p class="form__erreur">Existe déja!</p>';
+								echo "<script>window.location.href = 'login.php';</script>";
 							}else {
 								$query = "INSERT INTO MEMBRES (displayname, email, date, karma, profilpic) VALUES ('$displayname', '$email', '$date', '$karma', '$profilpic')";
 								mysqli_query($link, $query);
+
+								$query = "SELECT id FROM MEMBRES WHERE email = '$email';";
+								$resultlog = mysqli_query($link, $query);
+								$logline = mysqli_fetch_array($resultlog);
+								$_SESSION['id'] = $logline['id'];
+								$_SESSION["displayname"] = $displayname;
+								$_SESSION['email'] = $email;
+								$_SESSION['profilpic'] = $profilpic;
 								mysqli_close($link);
 								header('Location:index.php');
 
@@ -115,15 +123,21 @@ require_once('vendor/autoload.php');
 									$resultemail = mysqli_query($link, $query);
 
 									if (0 != mysqli_num_rows($resultemail)) {
-										?>
-										<p class="form__erreur">Existe déja!</p>
-										<?php
+										//<p class="form__erreur">Existe déja!</p>
+										echo "<script>window.location.href = 'login.php';</script>";
 
 									}else {
 
 
 										$query = "INSERT INTO MEMBRES (displayname, email, password, date, karma, profilpic) VALUES ('$displayname', '$email', '$password', '$date', '$karma', '$profilpic')";
 										mysqli_query($link, $query);
+										$query = "SELECT id FROM MEMBRES WHERE email = '$email';";
+										$resultlog = mysqli_query($link, $query);
+										$logline = mysqli_fetch_array($resultlog);
+										$_SESSION['id'] = $logline['id'];
+										$_SESSION["displayname"] = $displayname;
+										$_SESSION['email'] = $email;
+										$_SESSION['profilpic'] = $profilpic;
 										//Déconnexion de la base de données
 										mysqli_close($link);
 										header('Location:index.php');
