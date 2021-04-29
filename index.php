@@ -25,6 +25,7 @@
 
 	<div class="body">
         Bienvenue sur Stack Overflow !
+        <?php echo $_SESSION["displayname"]; ?>
     </div>
 
 	<?php require_once('footer.php') ?>

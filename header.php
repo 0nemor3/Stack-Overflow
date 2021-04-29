@@ -12,7 +12,7 @@
     <button type="submit" class="searchbar__button" name="submit"><i class="fas fa-search"></i></button>
   </form>
   <?php
-    if (!isset($SESSION['displayname'])){
+    if (!isset($_SESSION['displayname'])){
       $header_file = "header_visitor.php";
     }else{
       $header_file = "header_log.php";

@@ -1,4 +1,36 @@
-<?php session_start(); ?>
+<?php session_start();
+require_once ('const.php');
+require_once('vendor/autoload.php');
+
+if (isset($_SESSION['displayname'])) {
+	header("Location:index.php");
+}
+if (isset($_POST['email']) && isset($_POST['password'])) {
+	if (empty($_POST['email']) || empty($_POST['password'])) {
+		//echo "<script>alert('Identifiants manquants ou incorects!');</script>";
+		header('Location:login.php');
+	}
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+
+	$link = mysqli_connect(HOST, USER, PASSWORD, BASE);
+	$query = "SELECT email FROM MEMBRES WHERE email = '$email';";
+	$resultlogin = mysqli_query($link, $query);
+	if (1 != mysqli_num_rows($resultlogin)) {
+		//echo "<script>alert('Identifiants manquants ou incorects!');</script>";
+		header('Location:login.php');
+	}
+
+
+
+
+
+}
+
+
+
+
+?>
 
 
 
@@ -29,6 +61,7 @@
 					<button class="center__button-google"><img src="img/google.svg" alt=""> Login with Google</button>
 					<button class="center__button-facebook"><i class="fab fa-facebook-square"></i> Login with Facebook</button>
 					<button class="center__button-github"><i class="fab fa-github"></i> Login with Github</button>
+					<form action="login.php" method="post">
 					<div class="center__form">
 						<div class="center__login">
 							<label>Email</label>
@@ -38,8 +71,9 @@
 							<label>Password</label>
 							<input type="password" name="password" class="center__password-input">
 						</div>
-						<button type="submit" class="center__login-button">Log In</button>
+						<button type="submit" class="center__login-button" onclick="window.location.href='login.php'">Log In</button>
 					</div>
+					</form>
 					<p class="center__bottom">
 						Don't have an account ? <a href="signup.php">Sign In</a>
 					</p>
