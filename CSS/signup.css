@@ -19,6 +19,8 @@
 .body {
 	padding-bottom: 0;
  	margin-bottom: 0;
+ 	height: 100vh;
+ 	padding-top: 127px;
 }
 
 
@@ -60,9 +62,21 @@
 }
 /*Right Side*/
 .content__right {
-	width: 50%;
+	width: 370px;
 	padding-right: 17em;
 	padding-left: 14em;
+	padding-top: 30px;
+
+}
+
+.content__right a {
+	text-decoration: none;
+}
+
+@media (min-width: 1500px) {
+	.content__right {
+		margin-right: 50px;
+	}
 }
 
 .right__google,

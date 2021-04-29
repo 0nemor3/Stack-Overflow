@@ -1,0 +1,58 @@
+/*Global*/
+.content {
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 0;
+}
+
+.body {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	min-height: calc(100vh - 67px);
+}
+
+.footer {
+	position: relative;
+}
+
+/*Top*/
+.top {
+	background-color: #FFF;
+	width: 100%;
+	padding: 12px;
+}
+
+.top__title {
+	padding: 15px;
+	display: flex;
+}
+
+.top__title h1 {
+	font-weight: 10;
+	font-size: 30px;
+}
+
+.top__title button {
+	border: 1px solid #0077CC;
+	border-radius: 3px;
+	margin-left: auto;
+	background-color: #0095ff;
+	color: #FFF;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.top__title button:hover {
+	background-color: #0077CC;
+	cursor: pointer;
+}
+
+.top__filter {
+	display: flex;
+}
+
+
+.top__numbers {
+	padding-left: 12px;
+}
+

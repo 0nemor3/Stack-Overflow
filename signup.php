@@ -1,5 +1,6 @@
 <?php session_start();
 require_once('const.php');
+require_once('vendor/autoload.php');
 ?>
 
 
@@ -35,33 +36,73 @@ require_once('const.php');
 					<p class="content__start">Get Stack Overflow now!</p>
 				</div>
 				<div class="content__right">
+					<?php
+					$client = new Google_Client();
+					$client->setClientId(GOOGLE_CLIENT_ID);
+					$client->setClientSecret(GOOGLE_CLIENT_SECRET);
+					$client->setRedirectUri(GOOGLE_REDIRECTURL);
+					$client->addScope('profile');
+					$client->addScope('email');
+					echo "<a href='".$client->createAuthUrl()."'>";
+					if (isset($_GET['code'])) {
+						$code = $_GET['code'];
+
+						$token = $client->fetchAccessTokenWithAuthCode($code);
+						$client->setAccessToken($token);
+
+						$gauth = new Google_Service_Oauth2($client);
+						$google_info = $gauth->userinfo -> get();
+						$email = $google_info->email;
+						$displayname = $google_info->name;
+						echo $displayname. " and " .$email;
+						if (isset($displayname) && isset($email)) {
+							if (empty($displayname) || empty($email)) {
+								echo "<script>window.location.href = 'error.php';</script>";
+							}
+							$date = date('Y-m-d H:i:s');
+							$karma = 1;
+							$profilpic = "profilpic/default.png";
+							$link = mysqli_connect(HOST, USER, PASSWORD, BASE);
+							$query = "SELECT email FROM MEMBRES WHERE email = '$email';";
+							$resultemail = mysqli_query($link, $query);
+							if (0 != mysqli_num_rows($resultemail)) {
+								echo '<p class="form__erreur">Existe déja!</p>';
+							}else {
+								$query = "INSERT INTO MEMBRES (displayname, email, date, karma, profilpic) VALUES ('$displayname', '$email', '$date', '$karma', '$profilpic')";
+								mysqli_query($link, $query);
+								mysqli_close($link);
+								header('Location:index.php');
+
+							}
+						}
+					}
+					?>
 					<button class="right__google"><img src="img/google.svg" alt="">Sign up with Google</button>
+					<?php echo "</a>"; ?>
 					<button class="right__facebook"><i class="fab fa-facebook-square"></i> Sign up with Facebook</button>
 					<button class="right__github"><i class="fab fa-github"></i> Sign up with Github</button>
 					<div class="form">
 						<form action="#" method="post">
 							<div class="form__name">
-							<label for="display_name">Display Name</label>
-							<input type="text" name="display_name">
+								<label for="display_name">Display Name</label>
+								<input type="text" name="display_name">
 							</div>
 							<div class="form__email">
-							<label for="email">Email</label>
-							<input type="email" name="email">
+								<label for="email">Email</label>
+								<input type="email" name="email">
 							</div>
 							<div class="form__password">
-							<label for="password">Password</label>
-							<input type="password" name="password">
+								<label for="password">Password</label>
+								<input type="password" name="password">
 							</div>
 							<button type="submit" class="form__signup-button">Sign Up</button>
 							<?php
-							if (isset($_POST['display_name']) || isset($_POST['email']) || isset($_POST['password'])) {
+							if (isset($_POST['display_name']) && isset($_POST['email']) && isset($_POST['password'])) {
 								$displayname = $_POST['display_name'];
 								$email = $_POST['email'];
 								$password = $_POST['password'];
 								if (empty($displayname) || empty($email) || empty($password)) {
-									?>
-									<p class="form__error">Empty</p>
-									<?php
+									echo "<script>window.location.href = 'error.php';</script>";
 								}else {
 									$date = date('Y-m-d H:i:s');
 									$karma = 1;

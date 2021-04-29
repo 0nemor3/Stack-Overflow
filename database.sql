@@ -31,6 +31,7 @@ CREATE TABLE KARMA (id INT AUTO_INCREMENT PRIMARY KEY,
 					auteur int,
 					question INT,
 					reponse INT,
+					negatif INT,
 					date DATETIME);
 
 
@@ -55,7 +56,7 @@ VALUES (1, "You can simply tap 'git reset'.", 2,"Gustave Eiffel", '2021-04-16 15
 		(1, "You should try 'git rm --cached filename' .", 3,"Jean Zay", '2021-04-16 15:27:01', 2);
 
 
-INSERT INTO KARMA (auteur, question, reponse, date)
-VALUES (1, NULL, 1, '2021-04-16 15:47:39'),
-		(1, NULL, 2, '2021-04-16 15:48:03'),
-		(2, NULL, 2, '2021-04-16 15:49:00');
+INSERT INTO KARMA (auteur, question, reponse, negatif, date)
+VALUES (1, NULL, 1, 0, '2021-04-16 15:47:39'),
+		(1, NULL, 2, 0, '2021-04-16 15:48:03'),
+		(2, NULL, 2, 0, '2021-04-16 15:49:00');
