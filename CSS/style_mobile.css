@@ -1,0 +1,109 @@
+@media (max-width: 500px) {
+
+.container {
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto;
+}
+
+.header {
+	grid-column: 1;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 3px 1fr 1fr 1fr 1fr;
+	box-shadow: none;
+}
+
+.body {
+	grid-column: 1;
+	height: max(80vh, 200px);
+}
+
+.nav-top-bar {
+	grid-row: 1;
+}
+
+.nav-mid-bar {
+	display: none;
+}
+
+.nav-mid-bar__menu {
+	grid-row: 3;
+	grid-column: 1;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+}
+
+.menu__button {
+	margin-left: 45%;
+}
+
+.menu__dropdown {
+	width: 100%;
+}
+
+.menu__dropdown a {
+	padding-left: 40%;
+}
+
+.nav-mid-bar__img {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.nav-mid-bar__searchbar {
+	grid-column: 1;
+	grid-row: 4;
+}
+
+.nav-mid-bar__visitor {
+	grid-column: 1;
+	grid-row: 5;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	align-content: center;
+}
+
+.nav-mid-bar__login-button {
+	grid-column: 1;
+
+}
+
+.nav-mid-bar__register-button {
+	grid-column: 2;
+
+}
+
+.nav-mid-bar__user {
+	grid-column: 1;
+}
+
+.nav-mid-bar__mail {
+	grid-column: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

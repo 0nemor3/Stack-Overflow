@@ -9,7 +9,6 @@
 	<title>Something went wrong</title>
 </head>
 <body>
-	<?php echo $SESSION['displayname']; ?>
 	<a href="index.php"><img src="img/database-error.png" alt="error"></a>
 </body>
 </html>

@@ -1,6 +1,8 @@
-<a href="profile.php" class="nav-mid-bar__user">
-	<span></span>
-</a>
-<a href="messagerie.php" class="nav-mid-bar__mail">
+<div class="nav-mid-bar__user" onclick="window.location.href='profile.php'">
+	<div class="nav-mid-bar__user-box">
+		<?php echo '<img src="' .$_SESSION['profilpic'].'"/>'; ?>
+	</div>
+</div>
+<div class="nav-mid-bar__mail" onclick="window.location.href='inbox.php'">
 	<i class="far fa-envelope"></i>
-</a>
+</div>

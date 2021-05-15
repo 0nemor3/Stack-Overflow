@@ -12,9 +12,7 @@ require_once('vendor/autoload.php');
 	<meta charset="utf-8">
 	<title>Stack Overflow</title>
 	<meta name="description" content="Posez vos questions et obtenez des réponses.">
-	<link rel="icon" type="image/ico" href="img/favicon.ico">
-	<link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
-	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<?php require_once('css_inclusion.php'); ?>
 	<link rel="stylesheet" href="CSS/signup.css">
 </head>
 
@@ -66,7 +64,15 @@ require_once('vendor/autoload.php');
 							$resultemail = mysqli_query($link, $query);
 							if (0 != mysqli_num_rows($resultemail)) {
 								//echo '<p class="form__erreur">Existe déja!</p>';
-								echo "<script>window.location.href = 'login.php';</script>";
+								$query = "SELECT id FROM MEMBRES WHERE email = '$email';";
+								$resultlog = mysqli_query($link, $query);
+								$logline = mysqli_fetch_array($resultlog);
+								$_SESSION['id'] = $logline['id'];
+								$_SESSION['displayname'] = $displayname;
+								$_SESSION['email'] = $email;
+								$_SESSION['profilpic'] = $profilpic;
+								mysqli_close($link);
+								header('Location:index.php');
 							}else {
 								$query = "INSERT INTO MEMBRES (displayname, email, date, karma, profilpic) VALUES ('$displayname', '$email', '$date', '$karma', '$profilpic')";
 								mysqli_query($link, $query);
@@ -75,7 +81,7 @@ require_once('vendor/autoload.php');
 								$resultlog = mysqli_query($link, $query);
 								$logline = mysqli_fetch_array($resultlog);
 								$_SESSION['id'] = $logline['id'];
-								$_SESSION["displayname"] = $displayname;
+								$_SESSION['displayname'] = $displayname;
 								$_SESSION['email'] = $email;
 								$_SESSION['profilpic'] = $profilpic;
 								mysqli_close($link);
@@ -123,9 +129,16 @@ require_once('vendor/autoload.php');
 									$resultemail = mysqli_query($link, $query);
 
 									if (0 != mysqli_num_rows($resultemail)) {
-										//<p class="form__erreur">Existe déja!</p>
-										echo "<script>window.location.href = 'login.php';</script>";
-
+										$query = "SELECT id FROM MEMBRES WHERE email = '$email';";
+										$resultlog = mysqli_query($link, $query);
+										$logline = mysqli_fetch_array($resultlog);
+										$_SESSION['id'] = $logline['id'];
+										$_SESSION["displayname"] = $displayname;
+										$_SESSION['email'] = $email;
+										$_SESSION['profilpic'] = $profilpic;
+										//Déconnexion de la base de données
+										mysqli_close($link);
+										header('Location:index.php');
 									}else {
 
 

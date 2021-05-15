@@ -9,9 +9,7 @@
         <meta charset="utf-8">
         <title>Stack Overflow</title>
         <meta name="description" content="Posez vos questions et obtenez des réponses.">
-        <link rel="icon" type="image/ico" href="img/favicon.ico">
-        <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <?php require_once('css_inclusion.php'); ?>
     </head>
 
 
@@ -25,7 +23,7 @@
 
 	<div class="body">
         Bienvenue sur Stack Overflow !
-        <?php echo $_SESSION["displayname"]; ?>
+        <?php //echo $_SESSION["displayname"]; ?>
     </div>
 
 	<?php require_once('footer.php') ?>

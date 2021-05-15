@@ -18,17 +18,13 @@
 /*Global*/
 
 .body {
+	grid-column: span 3;
+	grid-row: span 2;
 	background-color: #EFF0F1;
-
-	padding-bottom: 0;
-	margin-bottom: 0;
-
-
 }
 
-.content {
-	min-height: calc(100vh - 67px) !important;
-}
+
+
 
 .center {
 	margin-left: 40%;

@@ -43,9 +43,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	<meta charset="utf-8">
 	<title>Login - Stack Overflow</title>
 	<meta name="description" content="Posez vos questions et obtenez des réponses.">
-	<link rel="icon" type="image/ico" href="img/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="CSS/style.css">
-	<link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+	<?php require_once('css_inclusion.php'); ?>
 	<link rel="stylesheet" type="text/css" href="CSS/login.css">
 </head>
 
